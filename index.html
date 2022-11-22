@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>My first three.js app</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      canvas {
+        width: 50%;
+        height: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="three.js"></script>
+    <script>
+      var scene = new THREE.Scene();
+      var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+      var renderer = new THREE.WebGLRenderer();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      document.body.appendChild(renderer.domElement);
+
+      //BoxGeometry
+      /*const geometry = new THREE.BoxGeometry(2, 2, 2);
+      const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+      const mesh = new THREE.Mesh(geometry, material);
+      scene.add(mesh);*/
+
+      //CapsuleGeometry
+      /*const geometry = new THREE.CapsuleGeometry(1, 1, 4, 20);
+        const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+        const mesh = new THREE.Mesh(geometry, material);
+        scene.add(mesh);*/
+
+      //ConeGeometry
+      /* const geometry = new THREE.ConeGeometry(2, 3, 64);
+        const material = new THREE.MeshBasicMaterial({ color: 0xffff00 });
+        const mesh = new THREE.Mesh(geometry, material);
+        scene.add(mesh);*/
+
+      //HeartShape
+      /*const x = 0,
+          y = 0;
+
+        const heartShape = new THREE.Shape();
+
+        heartShape.moveTo(x + 5, y + 5);
+        heartShape.bezierCurveTo(x + 5, y + 5, x + 4, y, x, y);
+        heartShape.bezierCurveTo(x - 6, y, x - 6, y + 7, x - 6, y + 7);
+        heartShape.bezierCurveTo(x - 6, y + 11, x - 3, y + 15.4, x + 5, y + 19);
+        heartShape.bezierCurveTo(x + 12, y + 15.4, x + 16, y + 11, x + 16, y + 7);
+        heartShape.bezierCurveTo(x + 16, y + 7, x + 16, y, x + 10, y);
+        heartShape.bezierCurveTo(x + 7, y, x + 5, y + 5, x + 5, y + 5);
+
+        const geometry = new THREE.ShapeGeometry(heartShape);
+        const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+        const mesh = new THREE.Mesh(geometry, material);
+        scene.add(mesh);
+        */
+
+      //CircleGeometry
+      /*const geometry = new THREE.CircleGeometry(2, 64);
+        const material = new THREE.MeshBasicMaterial({ color: 0xffff00, side: THREE.DoubleSide });
+        const mesh = new THREE.Mesh(geometry, material);
+        scene.add(mesh);*/
+
+      //RingGeometry
+      /*const geometry = new THREE.RingGeometry( 1, 5, 32 );
+        const material = new THREE.MeshBasicMaterial( { color: 0xffff00, side: THREE.DoubleSide } );
+        const mesh = new THREE.Mesh( geometry, material );
+        scene.add( mesh );*/
+
+      //Plane Geometry
+      /*const geometry = new THREE.PlaneGeometry(4, 4);
+      const material = new THREE.MeshBasicMaterial({ color: 0xffff00, side: THREE.DoubleSide });
+      const mesh = new THREE.Mesh(geometry, material);
+      scene.add(mesh);*/
+
+      //Dodecahedron Geometry
+      /*const radius = 5;
+      const detail = 0;
+
+      const geometry = new THREE.DodecahedronGeometry(radius, detail);
+      const material = new THREE.MeshBasicMaterial({ color: 0x00ff00, side: THREE.DoubleSide });
+      const mesh = new THREE.Mesh(geometry, material);
+      const wireframe = new THREE.WireframeGeometry(geometry);
+
+      const line = new THREE.LineSegments(wireframe);
+      line.material.depthTest = false;
+      line.material.opacity = 1;
+      line.material.transparent = true;
+
+      scene.add(line);*/
+      //scene.add(mesh);
+
+      //Octahedron Geometry
+      /*const radius = 5;
+        const detail = 0;
+
+        const geometry = new THREE.OctahedronnGeometry( radius, detail );
+        const material = new THREE.MeshBasicMaterial( {color: 0x00ff00, side: THREE.DoubleSide} );
+        const mesh = new THREE.Mesh( geometry, material );
+        scene.add( mesh );*/
+
+      camera.position.z = 20;
+
+      var animate = function () {
+        requestAnimationFrame(animate);
+
+        mesh.rotation.x += 0.01;
+        mesh.rotation.y += 0.01;
+
+        renderer.render(scene, camera);
+      };
+
+      animate();
+    </script>
+  </body>
+</html>
